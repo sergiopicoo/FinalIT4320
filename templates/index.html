@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="content-block">
+    <div id="home">
+        <h1 class="block-title"> Trip Reservation System</h1>
+        <form method="post">
+            <P>Welcome to the IT4320 reservation system. Use the selector below to choose whether to make a reservation or log in as administrator.</P>
+            <label for="pages">Choose Menu Option:</label>
+            <br>
+            <select name="pages" id="pages">
+                <option value="">Choose an Option</option>
+                <option value="admin">Admin Login</option>
+                <option value="reservation">Reserve a Seat</option>
+            </select>
+            <br>
+            <br>
+            <button type="submit">Submit</button>
+        </form> 
+    </div>
+    </div>
+    
+{% endblock %}

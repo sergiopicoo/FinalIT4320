@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="content-block">
+    <div id="admin">
+        <h1 class="block-title">{% block title %} Administrator Login {% endblock %}</h1>
+        {% if seating %} 
+        <div>
+            <h3>Printing Seating Chart...</h3>
+            <div id="seat-chart">
+                {% for row in seating %}
+                {{ row }}
+                <br>
+                {% endfor %}
+            </div>
+            <h3>Total Sales: {{ sales }}</h3>
+        </div>
+        {% endif %}
+        
+        <form method="post">
+            <label for="username">Username: </label>
+            <input type="text" name="username" id="username">
+            <label for="password">Password: </label>
+            <input type="text" name="password" id="password">
+            <button type="submit">LOGIN</button>
+        </form>
+    </div>
+    </div>
+    
+{% endblock %}

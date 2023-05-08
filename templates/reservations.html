@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block content %}
+    <div class="content-block">
+    <div id="reservation">
+        <h2 class="block-title">{% block title %} Reserve Your Seat {% endblock %}</h2>
+        {% if conf_text %} 
+            <p>{{ conf_text | safe }}</p>
+        {% endif %}
+        {% if seating %} 
+            <h5>Seating Chart</h5>
+            <h5>X = Reserved Seat |||| O = Available Seat</h5>
+            <div id="seat-chart">
+                {% for row in seating %}
+                {{ row }}
+                {% endfor %}
+            </div>
+        {% endif %}
+        <form method="post">
+            <label for="first_name">First Name: </label>
+            <input type="text" name="first_name" id="first_name">
+            <label for="last_name">Last Name: </label>
+            <input type="text" name="last_name" id="last_name">
+            <br>
+            <label for="row">Choose a row: </label>
+
+            <select id="row" name="row">
+                <option value="">Choose a Row</option>
+                <option value="0">1</option>
+                <option value="1">2</option>
+                <option value="2">3</option>
+                <option value="3">4</option>
+                <option value="4">5</option>
+                <option value="5">6</option>
+                <option value="6">7</option>
+                <option value="7">8</option>
+                <option value="8">9</option>
+                <option value="9">10</option>
+                <option value="10">11</option>
+                <option value="11">12</option>
+            </select>
+            <label for="seat">Choose a seat: </label>
+            <select id="seat" name="seat">
+                <option value="">Choose a Seat</option>
+                <option value="0">1</option>
+                <option value="1">2</option>
+                <option value="2">3</option>
+                <option value="3">4</option>
+            </select>
+            <br>
+
+            <button type="submit">Submit</button>
+
+        </form>
+    </div>
+    </div>
+{% endblock %}
